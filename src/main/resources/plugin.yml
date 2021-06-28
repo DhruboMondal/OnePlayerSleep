@@ -1,0 +1,69 @@
+name: Main
+main: me.dhrubo.oneplayersleep.Main
+version: 1.0 (Minecraft 1.17)
+api-version: 1.17
+author: Dhrubo Mondal
+website: https://github.com/DhruboMondal
+
+softdepend: [PlaceholderAPI]
+
+commands:
+    sleep:
+        description: sleep help
+        usage: |
+            /sleep
+    sleep help:
+        description: sleep help
+        permission: sleep.see
+        usage: |
+            /sleep help
+    sleep reload:
+        description: Reloads the plugin configuration files
+        permission: sleep.reload
+        usage: |
+            /sleep reload
+    sleep test:
+        description: test a sleep message
+        permission: sleep.test
+        usage: |
+            /sleep test
+    sleep wakeup:
+        description: kick from bed
+        permission: sleep.wakeup
+        usage: |
+            /sleep wakeup
+    sleepwakeup:
+        description: kick from bed
+        permission: sleep.wakeup
+        usage: |
+            /sleepwakeup
+
+permissions:
+    sleep.*:
+        description: allows use of all sleep commands
+        default: op
+        children:
+            sleep.see: true
+            sleep.reload: true
+            sleep.wakeup: true
+            sleep.bypass: true
+            sleep.test: true
+    sleep.see:
+        description: can see the sleep help menu
+        default: true
+    sleep.reload: 
+        description: can reload sleep options
+        default: op
+    sleep.wakeup:
+        description: can kick from bed
+        default: true
+    sleep.bypass:
+        description: cannot kick this player from bed
+        default: op
+    sleep.test:
+        description: can run a sleep message in chat
+        default: op
+    sleep.ignore:
+        description: ignore player entirely
+        default: false
+    

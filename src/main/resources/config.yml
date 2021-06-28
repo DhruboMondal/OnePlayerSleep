@@ -1,0 +1,55 @@
+#time, in ticks, to delay the task of passing of night
+# if night is not passed, weather is cleared after 2x this amount
+sleepDelay: 60
+
+#server times to start allowing passing night and to stop the sleep tasks
+# effective min for overworld - 12010
+# effective max for overworld - 23992
+startTime: 12010
+stopTime: 23992
+
+#amount of server time to increment by, per server tick
+# lowering this will slow the night passing
+increment: 300
+
+#amount of server ticks between increments, usually 20 per second
+# lower makes a smoother transition but more work
+# min - 1
+timeBetweenIncrements: 2
+
+#sleep attempt cooldown, in ms, to prevent spam
+bedCooldown: 2000
+
+#whether to fully kick a player from a bed on wakeup call
+kickFromBed: true
+
+#whether to randomize the message for every player, instead of distributing 1 random message to all
+#   costs more performance to do multiple randomization
+randomPerPlayer: false
+
+#whether to reset the TIME_SINCE_REST statistic for every player on sleep task
+resetPhantomStatistics: true
+
+#option to send sleep message to other worlds
+# e.g. some Skyblock setups have a world per island
+messageOtherWorlds: false
+
+#option to sync time and weather across all worlds in the server
+syncWorldTime: false
+
+#option to show messages to players in dimensional variants with the same world name
+# basically whether "world_nether" gets sleep messages from "world" and vice versa
+messageOtherDimensions: false
+syncDimensionTime: false
+
+#option to explicitly disable bed explosions in _nether and/or _the_end
+allowSleepInNether: false
+allowSleepInEnd: false
+
+#plugins like EssentialsX will typically setSleepingIgnored on /afk or /vanish
+#whether to send messages from/to sleepingIgnored players
+messageFromSleepingIgnored: false
+messageToSleepingIgnored: true
+
+#dont edit this number or the plugin may get some error
+version: 1.6
